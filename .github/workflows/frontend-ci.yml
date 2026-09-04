@@ -3,8 +3,7 @@ name: Frontend CI
 on:
   push:
     branches: [main, develop]
-  pull_request:
-    branches: [main, develop]
+
 
 # Cancela ejecuciones anteriores del mismo PR/branch si llega un push nuevo,
 # para no gastar minutos de CI en resultados que ya no importan.

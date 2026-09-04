@@ -36,11 +36,7 @@ Abre http://localhost:5173
 
 ## Estructura
 
-```
-src/
-├── api/          # Clientes HTTP por entidad (products, categories, suppliers)
-├── components/    # Sidebar, Drawer, campos de formulario reutilizables
-├── pages/         # Una página CRUD completa por entidad
-├── App.jsx        # Rutas y layout
-└── main.jsx       # Punto de entrada
-```
+Carpetas del proyecto
+
+
+![Logotipo del proyecto](imagenes/estructura.png)
