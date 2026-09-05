@@ -78,3 +78,14 @@ Se logra procesar 100.000 registros en aproximadamente 7 segundos.
 ![Logotipo del proyecto](imagenes/aplicacion8.png)
 
 
+
+- La imagen en las "categorias". Se guarda la dirección "/src/assets/picture.png" donde picture.png es el nombre de la imagen correspondiente a la categoría.
+
+
+- Al momento de escribir la dirección si la imagen esta en la carpeta de imagenes públicas.
+
+
+![Logotipo del proyecto](imagenes/fotoCategorias.png)
+
+
+

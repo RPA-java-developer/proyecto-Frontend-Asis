@@ -39,7 +39,8 @@ export default function CategoriesPage() {
     setEditingId(category.categoryID)
     setForm({
       categoryName: category.categoryName,
-      description: category.description ?? ''
+      description: category.description ?? '',
+      picture: category.picture ?? ''
     })
     setError(null)
     setDrawerOpen(true)
@@ -52,7 +53,8 @@ export default function CategoriesPage() {
 
     const dto = {
       categoryName: form.categoryName,
-      description: form.description || null
+      description: form.description || null,
+      picture: form.picture || null
     }
 
     try {
@@ -107,6 +109,7 @@ export default function CategoriesPage() {
             <thead>
               <tr className="bg-white border-b border-line text-left text-xs text-slate">
                 <th className="px-4 py-2.5 font-medium">ID</th>
+                <th className="px-4 py-2.5 font-medium">Picture</th>
                 <th className="px-4 py-2.5 font-medium">Name</th>
                 <th className="px-4 py-2.5 font-medium">Description</th>
                 <th className="px-4 py-2.5 font-medium text-right">Products</th>
@@ -120,6 +123,29 @@ export default function CategoriesPage() {
                   className={`border-b border-line last:border-0 ${i % 2 ? 'bg-white/50' : 'bg-white'}`}
                 >
                   <td className="px-4 py-2.5 font-mono tabular text-slate">{c.categoryID}</td>
+
+
+                  <td className="px-4 py-2.5">
+                    {c.picture ? (
+                      <img
+                        src={c.picture}
+                        alt={c.categoryName}
+                        className="w-10 h-10 object-cover rounded border border-line bg-white"
+                        onError={e => {
+                          e.currentTarget.style.display = 'none'
+                          e.currentTarget.nextSibling.style.display = 'flex'
+                        }}
+                      />
+                    ) : null}
+                    <div
+                      className="w-10 h-10 rounded border border-dashed border-line bg-paper text-slate text-[10px] items-center justify-center"
+                      style={{ display: c.picture ? 'none' : 'flex' }}
+                    >
+                      Sin imagen
+                    </div>
+                  </td>
+
+
                   <td className="px-4 py-2.5 text-ink font-medium">{c.categoryName}</td>
                   <td className="px-4 py-2.5 text-slate">{c.description || '—'}</td>
                   <td className="px-4 py-2.5 font-mono tabular text-right text-ink">{c.productCount}</td>
@@ -164,6 +190,30 @@ export default function CategoriesPage() {
               onChange={e => setForm({ ...form, description: e.target.value })}
             />
           </Field>
+
+
+          <Field label="Picture">
+            <TextInput
+              placeholder="/src/assets/cloud.png"
+              value={form.picture}
+              onChange={e => setForm({ ...form, picture: e.target.value })}
+            />
+          </Field>          
+
+
+          {form.picture && (
+            <div className="mb-4">
+              <span className="block text-xs font-medium text-slate mb-1">Vista previa</span>
+              <img
+                src={form.picture}
+                alt="Vista previa"
+                className="w-16 h-16 object-cover rounded border border-line bg-white"
+                onError={e => { e.currentTarget.style.display = 'none' }}
+                onLoad={e => { e.currentTarget.style.display = 'block' }}
+              />
+            </div>
+          )}
+
 
           <button
             type="submit"
