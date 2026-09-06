@@ -128,7 +128,7 @@ export default function CategoriesPage() {
                   <td className="px-4 py-2.5">
                     {c.picture ? (
                       <img
-                        src={c.picture}
+                        src={`/images/${c.picture}`}
                         alt={c.categoryName}
                         className="w-10 h-10 object-cover rounded border border-line bg-white"
                         onError={e => {
@@ -194,7 +194,7 @@ export default function CategoriesPage() {
 
           <Field label="Picture">
             <TextInput
-              placeholder="/src/assets/cloud.png"
+              placeholder="picture.png"  
               value={form.picture}
               onChange={e => setForm({ ...form, picture: e.target.value })}
             />
@@ -205,7 +205,8 @@ export default function CategoriesPage() {
             <div className="mb-4">
               <span className="block text-xs font-medium text-slate mb-1">Vista previa</span>
               <img
-                src={form.picture}
+                src={`/images/${form.picture}`} 
+                
                 alt="Vista previa"
                 className="w-16 h-16 object-cover rounded border border-line bg-white"
                 onError={e => { e.currentTarget.style.display = 'none' }}
