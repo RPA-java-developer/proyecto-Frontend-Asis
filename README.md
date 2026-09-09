@@ -40,3 +40,29 @@ Carpetas del proyecto
 
 
 ![Logotipo del proyecto](imagenes/estructura.png)
+
+
+
+## Scripts para la Base de Datos
+
+Aquí se encuentran los diferentes scripts necesarios para la creación de la base de datos y las tablas principales.
+
+[scripts base de datos:](Base_datos_scripts.md)
+
+
+
+## Instrucciones para el proyecto frontend
+
+En este documento se presentan las instrucciones para el uso y funcionamiento de la aplicación.
+
+[Ver instrucciones de uso:](Instrucciones-proyecto-frontend.md)
+
+
+## Pruebas integración para el proyecto frontend
+
+Se evidencian las pruebas sobre componentes del proyecto frontend.
+
+[Ver pruebas de integración:](Pruebas_integracion.md)
+
+
+
