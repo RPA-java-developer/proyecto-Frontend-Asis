@@ -1,0 +1,4 @@
+ProductName,CategoryID,SupplierID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued
+Producto Ejemplo 1,1,1,10 unidades,15.50,100,0,10,false
+Producto Ejemplo 2,1,1,caja x 20,22.00,50,10,5,false
+Producto Ejemplo 3,2,,paquete,8.75,200,0,20,false
